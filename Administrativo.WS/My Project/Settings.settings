@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="Administrativo_WS_portal_consultar_Consultas" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://grupocandinho.com.br/WebServices/Consultas.asmx</Value>
+    </Setting>
+    <Setting Name="Administrativo_WS_portal_incluir_Cadastros" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://grupocandinho.com.br/WebServices/Cadastros.asmx</Value>
+    </Setting>
+    <Setting Name="Administrativo_WS_portal_alterar_Alteracoes" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://grupocandinho.com.br/WebServices/Alteracoes.asmx</Value>
+    </Setting>
+    <Setting Name="Administrativo_WS_portal_guias_Guias" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://grupocandinho.com.br/WebServices/Guias.asmx</Value>
+    </Setting>
+    <Setting Name="Administrativo_WS_portal_excluir_Exclui" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://grupocandinho.com.br/WebServices/Exclui.asmx</Value>
+    </Setting>
+    <Setting Name="Administrativo_WS_portal_arquivos_Arquivos" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://grupocandinho.com.br/WebServices/Arquivos.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,47 @@
+/ComumDAL.vb/1.1/Tue Sep 27 18:41:37 2016//
+/FiltroDAL.vb/1.2/Tue Feb 10 18:53:28 2015//
+/IAdministrativo.vb/1.2/Fri Jan 22 13:29:13 2016//
+/IComum.vb/1.1/Tue Sep 27 18:41:37 2016//
+/IFiltro.vb/1.1/Wed Apr 30 18:42:06 2014//
+/IGruposAcesso.vb/1.1/Tue Feb 18 15:49:06 2014//
+/IMonitoramento.vb/1.2/Mon May 16 13:34:09 2016//
+/IPortalServidor.vb/1.4/Fri Dec 11 18:45:07 2015//
+/SincronizarLogPortalDAL.vb/1.7/Tue May 16 17:31:01 2017//
+D/My Project////
+D/bin////
+D/obj////
+/AdministrativoDAL.vb/1.4/Wed Jul 26 12:52:59 2017//
+/MalaDiretaDAL.vb/1.6/Tue Aug 22 12:32:18 2017//
+/RegrasDAL.vb/1.8/Mon Aug 21 19:34:39 2017//
+/EmpresaObrigacoesDAL.vb/1.13/Wed Aug 16 17:06:37 2017//
+/Administrativo.DAL.vbproj/1.16/Result of merge//
+/CndDAL.vb/1.1/Mon Jan 28 12:22:30 2019//
+/DataBaseDAL.vb/1.9/Tue Jan 29 19:02:52 2019//
+/FeriadosDAL.vb/1.4/Tue Jan 29 19:02:52 2019//
+/GruposAcessoDAL.vb/1.3/Tue Jan 29 19:02:52 2019//
+/ICnd.vb/1.1/Mon Jan 28 12:22:30 2019//
+/IDataBase.vb/1.3/Tue Jan 29 19:02:52 2019//
+/IEmpresaObrigacoes.vb/1.10/Tue Jan 29 19:02:52 2019//
+/IFeriados.vb/1.3/Tue Jan 29 19:02:52 2019//
+/IMaladireta.vb/1.5/Tue Jan 29 19:02:52 2019//
+/IManutencaoObrigacoes.vb/1.9/Tue Jan 29 19:02:52 2019//
+/IMonitoramentoLog.vb/1.3/Tue Jan 29 19:02:52 2019//
+/IMonitoramentoVencimento.vb/1.5/Tue Jan 29 19:02:52 2019//
+/IObrigacoes.vb/1.8/Tue Jan 29 19:02:52 2019//
+/IParcelamento.vb/1.3/Tue Jan 29 19:02:52 2019//
+/IPortalUsuarios.vb/1.5/Tue Jan 29 19:02:52 2019//
+/IRegras.vb/1.6/Tue Jan 29 19:02:52 2019//
+/ISincronizarLogPortal.vb/1.3/Tue Jan 29 19:02:52 2019//
+/ITarefasExtras.vb/1.5/Tue Jan 29 19:02:52 2019//
+/IUsuario.vb/1.3/Tue Jan 29 19:02:52 2019//
+/ManutencaoObrigacoesDAL.vb/1.21/Tue Jan 29 19:02:52 2019//
+/MonitoramentoDAL.vb/1.6/Tue Jan 29 19:02:52 2019//
+/MonitoramentoLogDAL.vb/1.6/Tue Jan 29 19:02:52 2019//
+/MonitoramentoVencimentoDAL.vb/1.8/Tue Jan 29 19:02:52 2019//
+/ParcelamentoDAL.vb/1.3/Tue Jan 29 19:02:52 2019//
+/PortalServidorDAL.vb/1.10/Tue Jan 29 19:02:52 2019//
+/PortalUsuariosDAL.vb/1.8/Tue Jan 29 19:02:53 2019//
+/RegistroDAL.vb/1.2/Tue Jan 29 19:02:53 2019//
+/TarefasExtrasDAL.vb/1.11/Tue Jan 29 19:02:53 2019//
+/UsuarioDAL.vb/1.7/Result of merge//
+/ObrigacoesDAL.vb/1.14/Tue Jan 29 19:08:38 2019//

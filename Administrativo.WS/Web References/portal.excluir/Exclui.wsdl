@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.grupocandinho.com.br/WebServices/Exclui.asmx" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.grupocandinho.com.br/WebServices/Exclui.asmx" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.grupocandinho.com.br/WebServices/Exclui.asmx">
+      <s:element name="ExcluiEmpresas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="escritorioCNPJ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExcluiEmpresasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExcluiEmpresasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExcluiUsuarioEmpresa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="escritorioCNPJ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExcluiUsuarioEmpresaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExcluiUsuarioEmpresaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExcluiEmpresaUsuarioObrigacao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="escritorioCNPJ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailUsuarioEmpresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="obrigacao" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExcluiEmpresaUsuarioObrigacaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExcluiEmpresaUsuarioObrigacaoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExcluiUsuarioEscritorio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="escritorioCNPJ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExcluiUsuarioEscritorioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExcluiUsuarioEscritorioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExcluiObrigacoes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="escritorioCNPJ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="obrigacao" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExcluiObrigacoesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExcluiObrigacoesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExcluiEscritorios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="escritorioCNPJ" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExcluiEscritoriosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExcluiEscritoriosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ExcluiEmpresasSoapIn">
+    <wsdl:part name="parameters" element="tns:ExcluiEmpresas" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiEmpresasSoapOut">
+    <wsdl:part name="parameters" element="tns:ExcluiEmpresasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiUsuarioEmpresaSoapIn">
+    <wsdl:part name="parameters" element="tns:ExcluiUsuarioEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiUsuarioEmpresaSoapOut">
+    <wsdl:part name="parameters" element="tns:ExcluiUsuarioEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiEmpresaUsuarioObrigacaoSoapIn">
+    <wsdl:part name="parameters" element="tns:ExcluiEmpresaUsuarioObrigacao" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiEmpresaUsuarioObrigacaoSoapOut">
+    <wsdl:part name="parameters" element="tns:ExcluiEmpresaUsuarioObrigacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiUsuarioEscritorioSoapIn">
+    <wsdl:part name="parameters" element="tns:ExcluiUsuarioEscritorio" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiUsuarioEscritorioSoapOut">
+    <wsdl:part name="parameters" element="tns:ExcluiUsuarioEscritorioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiObrigacoesSoapIn">
+    <wsdl:part name="parameters" element="tns:ExcluiObrigacoes" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiObrigacoesSoapOut">
+    <wsdl:part name="parameters" element="tns:ExcluiObrigacoesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiEscritoriosSoapIn">
+    <wsdl:part name="parameters" element="tns:ExcluiEscritorios" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiEscritoriosSoapOut">
+    <wsdl:part name="parameters" element="tns:ExcluiEscritoriosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiEmpresasHttpGetIn">
+    <wsdl:part name="escritorioCNPJ" type="s:string" />
+    <wsdl:part name="empresa" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiEmpresasHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiUsuarioEmpresaHttpGetIn">
+    <wsdl:part name="escritorioCNPJ" type="s:string" />
+    <wsdl:part name="empresa" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiUsuarioEmpresaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiEmpresaUsuarioObrigacaoHttpGetIn">
+    <wsdl:part name="escritorioCNPJ" type="s:string" />
+    <wsdl:part name="empresa" type="s:string" />
+    <wsdl:part name="emailUsuarioEmpresa" type="s:string" />
+    <wsdl:part name="obrigacao" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiEmpresaUsuarioObrigacaoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiUsuarioEscritorioHttpGetIn">
+    <wsdl:part name="escritorioCNPJ" type="s:string" />
+    <wsdl:part name="login" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiUsuarioEscritorioHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiObrigacoesHttpGetIn">
+    <wsdl:part name="escritorioCNPJ" type="s:string" />
+    <wsdl:part name="obrigacao" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiObrigacoesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiEscritoriosHttpGetIn">
+    <wsdl:part name="escritorioCNPJ" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiEscritoriosHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiEmpresasHttpPostIn">
+    <wsdl:part name="escritorioCNPJ" type="s:string" />
+    <wsdl:part name="empresa" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiEmpresasHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiUsuarioEmpresaHttpPostIn">
+    <wsdl:part name="escritorioCNPJ" type="s:string" />
+    <wsdl:part name="empresa" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiUsuarioEmpresaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiEmpresaUsuarioObrigacaoHttpPostIn">
+    <wsdl:part name="escritorioCNPJ" type="s:string" />
+    <wsdl:part name="empresa" type="s:string" />
+    <wsdl:part name="emailUsuarioEmpresa" type="s:string" />
+    <wsdl:part name="obrigacao" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiEmpresaUsuarioObrigacaoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiUsuarioEscritorioHttpPostIn">
+    <wsdl:part name="escritorioCNPJ" type="s:string" />
+    <wsdl:part name="login" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiUsuarioEscritorioHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiObrigacoesHttpPostIn">
+    <wsdl:part name="escritorioCNPJ" type="s:string" />
+    <wsdl:part name="obrigacao" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiObrigacoesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiEscritoriosHttpPostIn">
+    <wsdl:part name="escritorioCNPJ" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluiEscritoriosHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="ExcluiSoap">
+    <wsdl:operation name="ExcluiEmpresas">
+      <wsdl:input message="tns:ExcluiEmpresasSoapIn" />
+      <wsdl:output message="tns:ExcluiEmpresasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiUsuarioEmpresa">
+      <wsdl:input message="tns:ExcluiUsuarioEmpresaSoapIn" />
+      <wsdl:output message="tns:ExcluiUsuarioEmpresaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiEmpresaUsuarioObrigacao">
+      <wsdl:input message="tns:ExcluiEmpresaUsuarioObrigacaoSoapIn" />
+      <wsdl:output message="tns:ExcluiEmpresaUsuarioObrigacaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiUsuarioEscritorio">
+      <wsdl:input message="tns:ExcluiUsuarioEscritorioSoapIn" />
+      <wsdl:output message="tns:ExcluiUsuarioEscritorioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiObrigacoes">
+      <wsdl:input message="tns:ExcluiObrigacoesSoapIn" />
+      <wsdl:output message="tns:ExcluiObrigacoesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiEscritorios">
+      <wsdl:input message="tns:ExcluiEscritoriosSoapIn" />
+      <wsdl:output message="tns:ExcluiEscritoriosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ExcluiHttpGet">
+    <wsdl:operation name="ExcluiEmpresas">
+      <wsdl:input message="tns:ExcluiEmpresasHttpGetIn" />
+      <wsdl:output message="tns:ExcluiEmpresasHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiUsuarioEmpresa">
+      <wsdl:input message="tns:ExcluiUsuarioEmpresaHttpGetIn" />
+      <wsdl:output message="tns:ExcluiUsuarioEmpresaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiEmpresaUsuarioObrigacao">
+      <wsdl:input message="tns:ExcluiEmpresaUsuarioObrigacaoHttpGetIn" />
+      <wsdl:output message="tns:ExcluiEmpresaUsuarioObrigacaoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiUsuarioEscritorio">
+      <wsdl:input message="tns:ExcluiUsuarioEscritorioHttpGetIn" />
+      <wsdl:output message="tns:ExcluiUsuarioEscritorioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiObrigacoes">
+      <wsdl:input message="tns:ExcluiObrigacoesHttpGetIn" />
+      <wsdl:output message="tns:ExcluiObrigacoesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiEscritorios">
+      <wsdl:input message="tns:ExcluiEscritoriosHttpGetIn" />
+      <wsdl:output message="tns:ExcluiEscritoriosHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ExcluiHttpPost">
+    <wsdl:operation name="ExcluiEmpresas">
+      <wsdl:input message="tns:ExcluiEmpresasHttpPostIn" />
+      <wsdl:output message="tns:ExcluiEmpresasHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiUsuarioEmpresa">
+      <wsdl:input message="tns:ExcluiUsuarioEmpresaHttpPostIn" />
+      <wsdl:output message="tns:ExcluiUsuarioEmpresaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiEmpresaUsuarioObrigacao">
+      <wsdl:input message="tns:ExcluiEmpresaUsuarioObrigacaoHttpPostIn" />
+      <wsdl:output message="tns:ExcluiEmpresaUsuarioObrigacaoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiUsuarioEscritorio">
+      <wsdl:input message="tns:ExcluiUsuarioEscritorioHttpPostIn" />
+      <wsdl:output message="tns:ExcluiUsuarioEscritorioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiObrigacoes">
+      <wsdl:input message="tns:ExcluiObrigacoesHttpPostIn" />
+      <wsdl:output message="tns:ExcluiObrigacoesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiEscritorios">
+      <wsdl:input message="tns:ExcluiEscritoriosHttpPostIn" />
+      <wsdl:output message="tns:ExcluiEscritoriosHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ExcluiSoap" type="tns:ExcluiSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExcluiEmpresas">
+      <soap:operation soapAction="http://www.grupocandinho.com.br/WebServices/Exclui.asmx/ExcluiEmpresas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiUsuarioEmpresa">
+      <soap:operation soapAction="http://www.grupocandinho.com.br/WebServices/Exclui.asmx/ExcluiUsuarioEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiEmpresaUsuarioObrigacao">
+      <soap:operation soapAction="http://www.grupocandinho.com.br/WebServices/Exclui.asmx/ExcluiEmpresaUsuarioObrigacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiUsuarioEscritorio">
+      <soap:operation soapAction="http://www.grupocandinho.com.br/WebServices/Exclui.asmx/ExcluiUsuarioEscritorio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiObrigacoes">
+      <soap:operation soapAction="http://www.grupocandinho.com.br/WebServices/Exclui.asmx/ExcluiObrigacoes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiEscritorios">
+      <soap:operation soapAction="http://www.grupocandinho.com.br/WebServices/Exclui.asmx/ExcluiEscritorios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ExcluiSoap12" type="tns:ExcluiSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExcluiEmpresas">
+      <soap12:operation soapAction="http://www.grupocandinho.com.br/WebServices/Exclui.asmx/ExcluiEmpresas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiUsuarioEmpresa">
+      <soap12:operation soapAction="http://www.grupocandinho.com.br/WebServices/Exclui.asmx/ExcluiUsuarioEmpresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiEmpresaUsuarioObrigacao">
+      <soap12:operation soapAction="http://www.grupocandinho.com.br/WebServices/Exclui.asmx/ExcluiEmpresaUsuarioObrigacao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiUsuarioEscritorio">
+      <soap12:operation soapAction="http://www.grupocandinho.com.br/WebServices/Exclui.asmx/ExcluiUsuarioEscritorio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiObrigacoes">
+      <soap12:operation soapAction="http://www.grupocandinho.com.br/WebServices/Exclui.asmx/ExcluiObrigacoes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiEscritorios">
+      <soap12:operation soapAction="http://www.grupocandinho.com.br/WebServices/Exclui.asmx/ExcluiEscritorios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ExcluiHttpGet" type="tns:ExcluiHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ExcluiEmpresas">
+      <http:operation location="/ExcluiEmpresas" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiUsuarioEmpresa">
+      <http:operation location="/ExcluiUsuarioEmpresa" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiEmpresaUsuarioObrigacao">
+      <http:operation location="/ExcluiEmpresaUsuarioObrigacao" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiUsuarioEscritorio">
+      <http:operation location="/ExcluiUsuarioEscritorio" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiObrigacoes">
+      <http:operation location="/ExcluiObrigacoes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiEscritorios">
+      <http:operation location="/ExcluiEscritorios" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ExcluiHttpPost" type="tns:ExcluiHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ExcluiEmpresas">
+      <http:operation location="/ExcluiEmpresas" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiUsuarioEmpresa">
+      <http:operation location="/ExcluiUsuarioEmpresa" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiEmpresaUsuarioObrigacao">
+      <http:operation location="/ExcluiEmpresaUsuarioObrigacao" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiUsuarioEscritorio">
+      <http:operation location="/ExcluiUsuarioEscritorio" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiObrigacoes">
+      <http:operation location="/ExcluiObrigacoes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluiEscritorios">
+      <http:operation location="/ExcluiEscritorios" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Exclui">
+    <wsdl:port name="ExcluiSoap" binding="tns:ExcluiSoap">
+      <soap:address location="http://grupocandinho.com.br/WebServices/Exclui.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ExcluiSoap12" binding="tns:ExcluiSoap12">
+      <soap12:address location="http://grupocandinho.com.br/WebServices/Exclui.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ExcluiHttpGet" binding="tns:ExcluiHttpGet">
+      <http:address location="http://grupocandinho.com.br/WebServices/Exclui.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ExcluiHttpPost" binding="tns:ExcluiHttpPost">
+      <http:address location="http://grupocandinho.com.br/WebServices/Exclui.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

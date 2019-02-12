@@ -1,0 +1,175 @@
+﻿Imports Administrativo.Modelo
+Imports Administrativo.BLL
+Imports DevExpress.XtraSplashScreen
+Imports DevExpress.XtraReports.UI
+Imports DevExpress.XtraEditors
+Imports DevExpress.XtraEditors.Controls
+Imports DevExpress.XtraEditors.Mask
+Imports DevExpress.XtraEditors.Repository
+
+Public Class empresaobrigacoesrelarioXtraForm
+    Private bsEmpresaObrigacacoes As BindingSource
+
+    Dim objEmpresaObrigacoes As New EmpresaObrigacoesBLL
+    Dim objComum As New ComumBLL
+
+    Dim empresainicialEdit As String
+    Dim empresafinalEdit As String
+    Dim obrigacaoinicialEdit As String
+    Dim obrigacaofinalEdit As String
+
+    Public Sub New()
+        InitializeComponent()
+
+        objComum.Browse("select empresa, razaosocial " +
+                                      "from empresas " +
+                                     "where exercicio = " + administrativoInfo.Exercicio.ToString + " order by empresa", empresasInfoBindingSource)
+        objComum.Browse("select obrigacao, descricao from admobrigacoes order by obrigacao", obrigacoesInfoBindingSource)
+        objComum.Browse("select codigo as tipolucro, descricao from tabaux where tabela = 'TipoLucro' order by codigo", tipolucroBindingSource)
+        objComum.Browse("select codigo as tipoempresa, descricao from tabaux where tabela = 'TipoEmpresaEscrita' order by codigo", tipoempresaBindingSource)
+    End Sub
+
+    Private Sub empresaobrigacoesrelarioXtraForm_Load(sender As Object, e As System.EventArgs) Handles Me.Load
+        objComum.DefineValoresDefault("empresas", "empresa", empresainicialSearchLookUpEdit, empresafinalSearchLookUpEdit,
+                                                  "exercicio = " + administrativoInfo.Exercicio.ToString)
+        objComum.DefineValoresDefault("admobrigacoes", "obrigacao", obrigacaoinicialSearchLookUpEdit, obrigacaofinalSearchLookUpEdit)
+    End Sub
+
+    Private Sub imprimirSimpleButton_Click(sender As System.Object, e As System.EventArgs) Handles imprimirSimpleButton.Click
+
+        Try
+            If (tiporelatorioComboBoxEdit.SelectedIndex = 0) Then
+                Dim report As New empresaobrigacoesEOXtraReport()
+                GeraRelatorio(report)
+            Else
+                Dim report As New empresaobrigacoesOEXtraReport()
+                GeraRelatorio(report)
+            End If
+        Catch ex As Exception
+            SplashScreenManager.CloseForm()
+            XtraMessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub GeraRelatorio(pReport As XtraReport)
+
+        empresainicialEdit = empresainicialSearchLookUpEdit.Text.Replace(".", "")
+        empresafinalEdit = empresafinalSearchLookUpEdit.Text.Replace(".", "")
+        obrigacaoinicialEdit = obrigacaoinicialSearchLookUpEdit.Text.Replace("-", "")
+        obrigacaofinalEdit = obrigacaofinalSearchLookUpEdit.Text.Replace("-", "")
+        
+        Try
+            SplashScreenManager.ShowForm(Me, GetType(aguardeWaitForm), True, True, False)
+
+            objEmpresaObrigacoes.Report(empresainicialEdit, empresafinalEdit, obrigacaoinicialEdit, obrigacaofinalEdit, tipolucroSearchLookUpEdit.Text, tipoempresaSearchLookUpEdit.Text, pReport)
+
+            Dim printTool As New ReportPrintTool(pReport)
+            pReport.Parameters.Item("Sistema").Value = Application.ProductName
+            pReport.Parameters.Item("Sistema").Visible = False
+
+            printTool.AutoShowParametersPanel = False
+
+            SplashScreenManager.CloseForm()
+            printTool.ShowRibbonPreview()
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Shared Function GetSimple() As Integer
+        Return MaskType.Simple
+    End Function
+
+    Private Sub voltarSimpleButton_Click(sender As System.Object, e As System.EventArgs) Handles voltarSimpleButton.Click
+        Me.Close()
+    End Sub
+
+    Private Sub empresainicialSearchLookUpEdit_CustomDisplayText(sender As System.Object, e As DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs) Handles empresainicialSearchLookUpEdit.CustomDisplayText
+        Dim editor As SearchLookUpEdit = TryCast(sender, SearchLookUpEdit)
+
+        If editor.EditValue IsNot Nothing Then
+            Dim index As Integer = editor.Properties.GetIndexByKeyValue(editor.EditValue)
+            If index >= 0 Then
+                empresainicialTextEdit.Text = objComum.RetornaDescricao(empresasInfoBindingSource, index, "razaosocial")
+            Else
+                empresainicialTextEdit.Text = String.Empty
+            End If
+        Else
+            empresainicialTextEdit.Text = String.Empty
+        End If
+    End Sub
+
+    Private Sub empresafinalSearchLookUpEdit_CustomDisplayText(sender As System.Object, e As DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs) Handles empresafinalSearchLookUpEdit.CustomDisplayText
+        Dim editor As SearchLookUpEdit = TryCast(sender, SearchLookUpEdit)
+
+        If editor.EditValue IsNot Nothing Then
+            Dim index As Integer = editor.Properties.GetIndexByKeyValue(editor.EditValue)
+            If index >= 0 Then
+                empresafinalTextEdit.Text = objComum.RetornaDescricao(empresasInfoBindingSource, index, "razaosocial")
+            Else
+                empresafinalTextEdit.Text = String.Empty
+            End If
+        Else
+            empresafinalTextEdit.Text = String.Empty
+        End If
+    End Sub
+
+    Private Sub obrigacaoinicialSearchLookUpEdit_CustomDisplayText(sender As System.Object, e As DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs) Handles obrigacaoinicialSearchLookUpEdit.CustomDisplayText
+        Dim editor As SearchLookUpEdit = TryCast(sender, SearchLookUpEdit)
+
+        If editor.EditValue IsNot Nothing Then
+            Dim index As Integer = editor.Properties.GetIndexByKeyValue(editor.EditValue)
+            If index >= 0 Then
+                obrigacaoinicialTextEdit.Text = objComum.RetornaDescricao(obrigacoesInfoBindingSource, index, "descricao")
+            Else
+                obrigacaoinicialTextEdit.Text = String.Empty
+            End If
+        Else
+            obrigacaoinicialTextEdit.Text = String.Empty
+        End If
+    End Sub
+
+    Private Sub obrigacaofinalSearchLookUpEdit_CustomDisplayText(sender As System.Object, e As DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs) Handles obrigacaofinalSearchLookUpEdit.CustomDisplayText
+        Dim editor As SearchLookUpEdit = TryCast(sender, SearchLookUpEdit)
+
+        If editor.EditValue IsNot Nothing Then
+            Dim index As Integer = editor.Properties.GetIndexByKeyValue(editor.EditValue)
+            If index >= 0 Then
+                obrigacaofinalTextEdit.Text = objComum.RetornaDescricao(obrigacoesInfoBindingSource, index, "descricao")
+            Else
+                obrigacaofinalTextEdit.Text = String.Empty
+            End If
+        Else
+            obrigacaofinalTextEdit.Text = String.Empty
+        End If
+    End Sub
+
+    Private Sub tipolucroSearchLookUpEdit_CustomDisplayText(sender As System.Object, e As DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs) Handles tipolucroSearchLookUpEdit.CustomDisplayText
+        Dim editor As SearchLookUpEdit = TryCast(sender, SearchLookUpEdit)
+        If editor.EditValue IsNot Nothing Then
+            Dim index As Integer = editor.Properties.GetIndexByKeyValue(editor.EditValue)
+            If index >= 0 Then
+                tipolucrodescTextEdit.Text = objComum.RetornaDescricao(tipolucroBindingSource, index, "descricao")
+            Else
+                tipolucrodescTextEdit.Text = String.Empty
+            End If
+        Else
+            tipolucrodescTextEdit.Text = String.Empty
+        End If
+    End Sub
+
+    Private Sub tipoempresaSearchLookUpEdit_CustomDisplayText(sender As System.Object, e As DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs) Handles tipoempresaSearchLookUpEdit.CustomDisplayText
+        Dim editor As SearchLookUpEdit = TryCast(sender, SearchLookUpEdit)
+        If editor.EditValue IsNot Nothing Then
+            Dim index As Integer = editor.Properties.GetIndexByKeyValue(editor.EditValue)
+            If index >= 0 Then
+                tipoempresadescTextEdit.Text = objComum.RetornaDescricao(tipoempresaBindingSource, index, "descricao")
+            Else
+                tipoempresadescTextEdit.Text = String.Empty
+            End If
+        Else
+            tipoempresadescTextEdit.Text = String.Empty
+        End If
+    End Sub
+End Class

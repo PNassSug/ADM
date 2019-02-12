@@ -1,0 +1,652 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9E2A0299-196A-4DAA-BFBF-A5826BD47F10}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Administrativo.UI.Windows</RootNamespace>
+    <AssemblyName>Administrativo.UI.Windows</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\BuddyWebNfe\Administrativo\Administrativo\Instalacao\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>\\Buddyweb\Administrativo\</InstallUrl>
+    <TargetCulture>pt-BR</TargetCulture>
+    <ProductName>Buddyweb Administrativo</ProductName>
+    <PublisherName>Glandata Sistemas Ltda</PublisherName>
+    <SuiteName>Buddyweb</SuiteName>
+    <ApplicationRevision>20</ApplicationRevision>
+    <ApplicationVersion>1.0.0.20</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <DefineConstants>
+    </DefineConstants>
+    <DocumentationFile>Administrativo.UI.Windows.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>Administrativo.UI.Windows.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Sub Main</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>GlanData.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>B98EE0366009104E3E00391262D03405DEA57556</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Administrativo.UI.Windows_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v16.2" />
+    <Reference Include="DevExpress.Charts.v16.2.Core, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v16.2" />
+    <Reference Include="DevExpress.Pdf.v16.2.Core, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v16.2.Core, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v16.2.Core, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v16.2.Core, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Spreadsheet.v16.2.Core, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v16.2" />
+    <Reference Include="DevExpress.XtraBars.v16.2, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v16.2.UI, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v16.2.Wizard, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v16.2, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v16.2" />
+    <Reference Include="DevExpress.XtraGrid.v16.2, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v16.2.Drawing, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v16.2, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPdfViewer.v16.2, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v16.2, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v16.2.Core, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v16.2.Core, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v16.2, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v16.2.UI, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v16.2.Extensions, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v16.2, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v16.2, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v16.2.Extensions, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v16.2.Reporting.Extensions, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v16.2, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v16.2.Core, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraSpreadsheet.v16.2, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v16.2, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.IO.Compression">
+      <HintPath>bin\Debug\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem">
+      <HintPath>bin\Debug\System.IO.Compression.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Drawing.Design" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="administrativoSplashScreen.Designer.vb">
+      <DependentUpon>administrativoSplashScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="administrativoSplashScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="aguardeWaitForm.Designer.vb">
+      <DependentUpon>aguardeWaitForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="aguardeWaitForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cndXtraForm.Designer.vb">
+      <DependentUpon>cndXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cndXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="empresaobrigacoesgeracaoXtraForm.Designer.vb">
+      <DependentUpon>empresaobrigacoesgeracaoXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="empresaobrigacoesgeracaoXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="empresaobrigacoesrelarioXtraForm.Designer.vb">
+      <DependentUpon>empresaobrigacoesrelarioXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="empresaobrigacoesrelarioXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="empresaobrigacoesXtraForm.Designer.vb">
+      <DependentUpon>empresaobrigacoesXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="empresaobrigacoesXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feriadosdetalheXtraForm.Designer.vb">
+      <DependentUpon>feriadosdetalheXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="feriadosdetalheXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feriadosXtraForm.Designer.vb">
+      <DependentUpon>feriadosXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="feriadosXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="filtroXtraForm.Designer.vb">
+      <DependentUpon>filtroXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="filtroXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gruposacessoXtraForm.Designer.vb">
+      <DependentUpon>gruposacessoXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="gruposacessoXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="historicoalteracoesXtraForm.Designer.vb">
+      <DependentUpon>historicoalteracoesXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="historicoalteracoesXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="maladiretaXtraform.Designer.vb">
+      <DependentUpon>maladiretaXtraform.vb</DependentUpon>
+    </Compile>
+    <Compile Include="maladiretaXtraform.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manualsistemaXtraForm.Designer.vb">
+      <DependentUpon>manualsistemaXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="manualsistemaXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manutencaoobrigacoesfuncionariosXtraForm.Designer.vb">
+      <DependentUpon>manutencaoobrigacoesfuncionariosXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="manutencaoobrigacoesfuncionariosXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="monitoramentologXtraForm.Designer.vb">
+      <DependentUpon>monitoramentologXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="monitoramentologXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manutencaoobrigacoeslogXtraForm.Designer.vb">
+      <DependentUpon>manutencaoobrigacoeslogXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="manutencaoobrigacoeslogXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manutencaoobrigacoesXtraForm.Designer.vb">
+      <DependentUpon>manutencaoobrigacoesXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="manutencaoobrigacoesXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="monitoramentovencimentoXtraForm.Designer.vb">
+      <DependentUpon>monitoramentovencimentoXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="monitoramentovencimentoXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="monitoramentoXtraForm.Designer.vb">
+      <DependentUpon>monitoramentoXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="monitoramentoXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="obrigacoesrelatorioXtraForm.Designer.vb">
+      <DependentUpon>obrigacoesrelatorioXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="obrigacoesrelatorioXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="obrigacoesusuarioXtraForm.Designer.vb">
+      <DependentUpon>obrigacoesusuarioXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="obrigacoesusuarioXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="obrigacoesXtraForm.Designer.vb">
+      <DependentUpon>obrigacoesXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="obrigacoesXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="parcelamentoXtraForm.Designer.vb">
+      <DependentUpon>parcelamentoXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="parcelamentoXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="portalarquivoXtraForm.Designer.vb">
+      <DependentUpon>portalarquivoXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="portalarquivoXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="portalguiaXtraForm.Designer.vb">
+      <DependentUpon>portalguiaXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="portalguiaXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="portalservidorsincronizaXtraForm.Designer.vb">
+      <DependentUpon>portalservidorsincronizaXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="portalservidorsincronizaXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="portalservidorXtraForm.Designer.vb">
+      <DependentUpon>portalservidorXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="portalservidorXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="portalusuariosXtraForm.Designer.vb">
+      <DependentUpon>portalusuariosXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="portalusuariosXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="principalRibbonForm.Designer.vb">
+      <DependentUpon>principalRibbonForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="principalRibbonForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="regrasgeracaoXtraForm.Designer.vb">
+      <DependentUpon>regrasgeracaoXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="regrasgeracaoXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="regrasrelatorioXtraForm.Designer.vb">
+      <DependentUpon>regrasrelatorioXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="regrasrelatorioXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="regrasXtraForm.Designer.vb">
+      <DependentUpon>regrasXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="regrasXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\empresaobrigacoesEOXtraReport.Designer.vb">
+      <DependentUpon>empresaobrigacoesEOXtraReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\empresaobrigacoesEOXtraReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\empresaobrigacoesOEXtraReport.Designer.vb">
+      <DependentUpon>empresaobrigacoesOEXtraReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\empresaobrigacoesOEXtraReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\obrigacoesresumidoXtraReport.Designer.vb">
+      <DependentUpon>obrigacoesresumidoXtraReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\obrigacoesresumidoXtraReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\obrigacoesdetalhadoXtraReport.Designer.vb">
+      <DependentUpon>obrigacoesdetalhadoXtraReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\obrigacoesdetalhadoXtraReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\regrasXtraReport.Designer.vb">
+      <DependentUpon>regrasXtraReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\regrasXtraReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\sincronizaportallogXtraReport.Designer.vb">
+      <DependentUpon>sincronizaportallogXtraReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\sincronizaportallogXtraReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="selecionarcompetenciaXtraForm.Designer.vb">
+      <DependentUpon>selecionarcompetenciaXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="selecionarcompetenciaXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="selecionardatabaseXtraForm.Designer.vb">
+      <DependentUpon>selecionardatabaseXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="selecionardatabaseXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="selecionarexercicioXtraForm.Designer.vb">
+      <DependentUpon>selecionarexercicioXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="selecionarexercicioXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="selecionarusuarioXtraForm.Designer.vb">
+      <DependentUpon>selecionarusuarioXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="selecionarusuarioXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sincronizarlogportalXtraForm.Designer.vb">
+      <DependentUpon>sincronizarlogportalXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="sincronizarlogportalXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tarefasextrasXtraForm.Designer.vb">
+      <DependentUpon>tarefasextrasXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="tarefasextrasXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="usuariosXtraForm.Designer.vb">
+      <DependentUpon>usuariosXtraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="usuariosXtraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="administrativoSplashScreen.resx">
+      <DependentUpon>administrativoSplashScreen.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="aguardeWaitForm.resx">
+      <DependentUpon>aguardeWaitForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cndXtraForm.resx">
+      <DependentUpon>cndXtraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="empresaobrigacoesgeracaoXtraForm.resx">
+      <DependentUpon>empresaobrigacoesgeracaoXtraForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="empresaobrigacoesrelarioXtraForm.resx">
+      <DependentUpon>empresaobrigacoesrelarioXtraForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="empresaobrigacoesXtraForm.resx">
+      <DependentUpon>empresaobrigacoesXtraForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="feriadosdetalheXtraForm.resx">
+      <DependentUpon>feriadosdetalheXtraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="feriadosXtraForm.resx">
+      <DependentUpon>feriadosXtraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="filtroXtraForm.resx">
+      <DependentUpon>filtroXtraForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gruposacessoXtraForm.resx">
+      <DependentUpon>gruposacessoXtraForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="historicoalteracoesXtraForm.resx">
+      <DependentUpon>historicoalteracoesXtraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="maladiretaXtraform.resx">
+      <DependentUpon>maladiretaXtraform.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manualsistemaXtraForm.resx">
+      <DependentUpon>manualsistemaXtraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manutencaoobrigacoesfuncionariosXtraForm.resx">
+      <DependentUpon>manutencaoobrigacoesfuncionariosXtraForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="monitoramentologXtraForm.resx">
+      <DependentUpon>monitoramentologXtraForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manutencaoobrigacoeslogXtraForm.resx">
+      <DependentUpon>manutencaoobrigacoeslogXtraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manutencaoobrigacoesXtraForm.resx">
+      <DependentUpon>manutencaoobrigacoesXtraForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="monitoramentovencimentoXtraForm.resx">
+      <DependentUpon>monitoramentovencimentoXtraForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="monitoramentoXtraForm.resx">
+      <DependentUpon>monitoramentoXtraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="obrigacoesrelatorioXtraForm.resx">
+      <DependentUpon>obrigacoesrelatorioXtraForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="obrigacoesusuarioXtraForm.resx">
+      <DependentUpon>obrigacoesusuarioXtraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="obrigacoesXtraForm.resx">
+      <DependentUpon>obrigacoesXtraForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="parcelamentoXtraForm.resx">
+      <DependentUpon>parcelamentoXtraForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="portalarquivoXtraForm.resx">
+      <DependentUpon>portalarquivoXtraForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="portalguiaXtraForm.resx">
+      <DependentUpon>portalguiaXtraForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="portalservidorsincronizaXtraForm.resx">
+      <DependentUpon>portalservidorsincronizaXtraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="portalservidorXtraForm.resx">
+      <DependentUpon>portalservidorXtraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="portalusuariosXtraForm.resx">
+      <DependentUpon>portalusuariosXtraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="principalRibbonForm.resx">
+      <DependentUpon>principalRibbonForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="regrasgeracaoXtraForm.resx">
+      <DependentUpon>regrasgeracaoXtraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="regrasrelatorioXtraForm.resx">
+      <DependentUpon>regrasrelatorioXtraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="regrasXtraForm.resx">
+      <DependentUpon>regrasXtraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\empresaobrigacoesEOXtraReport.resx">
+      <DependentUpon>empresaobrigacoesEOXtraReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\empresaobrigacoesOEXtraReport.resx">
+      <DependentUpon>empresaobrigacoesOEXtraReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\obrigacoesresumidoXtraReport.resx">
+      <DependentUpon>obrigacoesresumidoXtraReport.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\obrigacoesdetalhadoXtraReport.resx">
+      <DependentUpon>obrigacoesdetalhadoXtraReport.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\regrasXtraReport.resx">
+      <DependentUpon>regrasXtraReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\sincronizaportallogXtraReport.resx">
+      <DependentUpon>sincronizaportallogXtraReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="selecionarcompetenciaXtraForm.resx">
+      <DependentUpon>selecionarcompetenciaXtraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="selecionardatabaseXtraForm.resx">
+      <DependentUpon>selecionardatabaseXtraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="selecionarexercicioXtraForm.resx">
+      <DependentUpon>selecionarexercicioXtraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="selecionarusuarioXtraForm.resx">
+      <DependentUpon>selecionarusuarioXtraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sincronizarlogportalXtraForm.resx">
+      <DependentUpon>sincronizarlogportalXtraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tarefasextrasXtraForm.resx">
+      <DependentUpon>tarefasextrasXtraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usuariosXtraForm.resx">
+      <DependentUpon>usuariosXtraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\DataSources\Administrativo.Modelo.empresaobrigacoesInfo.datasource" />
+    <None Include="My Project\DataSources\Administrativo.Modelo.empresaobrigacoesrelatorioInfo.datasource" />
+    <None Include="My Project\DataSources\Administrativo.Modelo.manutencaoobrigacoesportallogrelatorioInfo.datasource" />
+    <None Include="My Project\DataSources\Administrativo.Modelo.obrigacoesInfo.datasource" />
+    <None Include="My Project\DataSources\Administrativo.Modelo.obrigacoesrelatorioInfo.datasource" />
+    <None Include="My Project\DataSources\Administrativo.Modelo.regrasrelatorioInfo.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Administrativo.BLL\Administrativo.BLL.vbproj">
+      <Project>{EF71AEF3-5F59-4987-8E70-09EDF5BD55CD}</Project>
+      <Name>Administrativo.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Administrativo.Modelo\Administrativo.Modelo.vbproj">
+      <Project>{B3939B5D-8940-46EF-BC6C-84F3B6BEC1BB}</Project>
+      <Name>Administrativo.Modelo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GlanData.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

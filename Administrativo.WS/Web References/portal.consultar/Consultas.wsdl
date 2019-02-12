@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.grupocandinho.com.br/WebServices/Consultas.asmx" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.grupocandinho.com.br/WebServices/Consultas.asmx" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.grupocandinho.com.br/WebServices/Consultas.asmx">
+      <s:element name="ConsultaEmpresas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="escritorioCNPJ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaEmpresasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaEmpresasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaUsuarioEmpresa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="escritorioCNPJ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaUsuarioEmpresaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaUsuarioEmpresaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaObrigacoes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="escritorioCNPJ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="obrigacao" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaObrigacoesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaObrigacoesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaEmpresaUsuarioObrigacao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="escritorioCNPJ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailUsuarioEmpresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="obrigacao" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaEmpresaUsuarioObrigacaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaEmpresaUsuarioObrigacaoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaEscritorios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="escritorioCNPJ" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaEscritoriosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaEscritoriosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaUsuarioEscritorio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="escritorioCNPJ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaUsuarioEscritorioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaUsuarioEscritorioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultaEmpresasSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaEmpresas" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEmpresasSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaEmpresasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaUsuarioEmpresaSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaUsuarioEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaUsuarioEmpresaSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaUsuarioEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaObrigacoesSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaObrigacoes" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaObrigacoesSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaObrigacoesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEmpresaUsuarioObrigacaoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaEmpresaUsuarioObrigacao" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEmpresaUsuarioObrigacaoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaEmpresaUsuarioObrigacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEscritoriosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaEscritorios" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEscritoriosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaEscritoriosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaUsuarioEscritorioSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaUsuarioEscritorio" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaUsuarioEscritorioSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaUsuarioEscritorioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEmpresasHttpGetIn">
+    <wsdl:part name="escritorioCNPJ" type="s:string" />
+    <wsdl:part name="empresa" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEmpresasHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaUsuarioEmpresaHttpGetIn">
+    <wsdl:part name="escritorioCNPJ" type="s:string" />
+    <wsdl:part name="empresa" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaUsuarioEmpresaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaObrigacoesHttpGetIn">
+    <wsdl:part name="escritorioCNPJ" type="s:string" />
+    <wsdl:part name="obrigacao" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaObrigacoesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEmpresaUsuarioObrigacaoHttpGetIn">
+    <wsdl:part name="escritorioCNPJ" type="s:string" />
+    <wsdl:part name="empresa" type="s:string" />
+    <wsdl:part name="emailUsuarioEmpresa" type="s:string" />
+    <wsdl:part name="obrigacao" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEmpresaUsuarioObrigacaoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEscritoriosHttpGetIn">
+    <wsdl:part name="escritorioCNPJ" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEscritoriosHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaUsuarioEscritorioHttpGetIn">
+    <wsdl:part name="escritorioCNPJ" type="s:string" />
+    <wsdl:part name="login" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaUsuarioEscritorioHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEmpresasHttpPostIn">
+    <wsdl:part name="escritorioCNPJ" type="s:string" />
+    <wsdl:part name="empresa" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEmpresasHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaUsuarioEmpresaHttpPostIn">
+    <wsdl:part name="escritorioCNPJ" type="s:string" />
+    <wsdl:part name="empresa" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaUsuarioEmpresaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaObrigacoesHttpPostIn">
+    <wsdl:part name="escritorioCNPJ" type="s:string" />
+    <wsdl:part name="obrigacao" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaObrigacoesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEmpresaUsuarioObrigacaoHttpPostIn">
+    <wsdl:part name="escritorioCNPJ" type="s:string" />
+    <wsdl:part name="empresa" type="s:string" />
+    <wsdl:part name="emailUsuarioEmpresa" type="s:string" />
+    <wsdl:part name="obrigacao" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEmpresaUsuarioObrigacaoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEscritoriosHttpPostIn">
+    <wsdl:part name="escritorioCNPJ" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEscritoriosHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaUsuarioEscritorioHttpPostIn">
+    <wsdl:part name="escritorioCNPJ" type="s:string" />
+    <wsdl:part name="login" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaUsuarioEscritorioHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="ConsultasSoap">
+    <wsdl:operation name="ConsultaEmpresas">
+      <wsdl:input message="tns:ConsultaEmpresasSoapIn" />
+      <wsdl:output message="tns:ConsultaEmpresasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaUsuarioEmpresa">
+      <wsdl:input message="tns:ConsultaUsuarioEmpresaSoapIn" />
+      <wsdl:output message="tns:ConsultaUsuarioEmpresaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaObrigacoes">
+      <wsdl:input message="tns:ConsultaObrigacoesSoapIn" />
+      <wsdl:output message="tns:ConsultaObrigacoesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEmpresaUsuarioObrigacao">
+      <wsdl:input message="tns:ConsultaEmpresaUsuarioObrigacaoSoapIn" />
+      <wsdl:output message="tns:ConsultaEmpresaUsuarioObrigacaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEscritorios">
+      <wsdl:input message="tns:ConsultaEscritoriosSoapIn" />
+      <wsdl:output message="tns:ConsultaEscritoriosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaUsuarioEscritorio">
+      <wsdl:input message="tns:ConsultaUsuarioEscritorioSoapIn" />
+      <wsdl:output message="tns:ConsultaUsuarioEscritorioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ConsultasHttpGet">
+    <wsdl:operation name="ConsultaEmpresas">
+      <wsdl:input message="tns:ConsultaEmpresasHttpGetIn" />
+      <wsdl:output message="tns:ConsultaEmpresasHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaUsuarioEmpresa">
+      <wsdl:input message="tns:ConsultaUsuarioEmpresaHttpGetIn" />
+      <wsdl:output message="tns:ConsultaUsuarioEmpresaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaObrigacoes">
+      <wsdl:input message="tns:ConsultaObrigacoesHttpGetIn" />
+      <wsdl:output message="tns:ConsultaObrigacoesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEmpresaUsuarioObrigacao">
+      <wsdl:input message="tns:ConsultaEmpresaUsuarioObrigacaoHttpGetIn" />
+      <wsdl:output message="tns:ConsultaEmpresaUsuarioObrigacaoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEscritorios">
+      <wsdl:input message="tns:ConsultaEscritoriosHttpGetIn" />
+      <wsdl:output message="tns:ConsultaEscritoriosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaUsuarioEscritorio">
+      <wsdl:input message="tns:ConsultaUsuarioEscritorioHttpGetIn" />
+      <wsdl:output message="tns:ConsultaUsuarioEscritorioHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ConsultasHttpPost">
+    <wsdl:operation name="ConsultaEmpresas">
+      <wsdl:input message="tns:ConsultaEmpresasHttpPostIn" />
+      <wsdl:output message="tns:ConsultaEmpresasHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaUsuarioEmpresa">
+      <wsdl:input message="tns:ConsultaUsuarioEmpresaHttpPostIn" />
+      <wsdl:output message="tns:ConsultaUsuarioEmpresaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaObrigacoes">
+      <wsdl:input message="tns:ConsultaObrigacoesHttpPostIn" />
+      <wsdl:output message="tns:ConsultaObrigacoesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEmpresaUsuarioObrigacao">
+      <wsdl:input message="tns:ConsultaEmpresaUsuarioObrigacaoHttpPostIn" />
+      <wsdl:output message="tns:ConsultaEmpresaUsuarioObrigacaoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEscritorios">
+      <wsdl:input message="tns:ConsultaEscritoriosHttpPostIn" />
+      <wsdl:output message="tns:ConsultaEscritoriosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaUsuarioEscritorio">
+      <wsdl:input message="tns:ConsultaUsuarioEscritorioHttpPostIn" />
+      <wsdl:output message="tns:ConsultaUsuarioEscritorioHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConsultasSoap" type="tns:ConsultasSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultaEmpresas">
+      <soap:operation soapAction="http://www.grupocandinho.com.br/WebServices/Consultas.asmx/ConsultaEmpresas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaUsuarioEmpresa">
+      <soap:operation soapAction="http://www.grupocandinho.com.br/WebServices/Consultas.asmx/ConsultaUsuarioEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaObrigacoes">
+      <soap:operation soapAction="http://www.grupocandinho.com.br/WebServices/Consultas.asmx/ConsultaObrigacoes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEmpresaUsuarioObrigacao">
+      <soap:operation soapAction="http://www.grupocandinho.com.br/WebServices/Consultas.asmx/ConsultaEmpresaUsuarioObrigacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEscritorios">
+      <soap:operation soapAction="http://www.grupocandinho.com.br/WebServices/Consultas.asmx/ConsultaEscritorios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaUsuarioEscritorio">
+      <soap:operation soapAction="http://www.grupocandinho.com.br/WebServices/Consultas.asmx/ConsultaUsuarioEscritorio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConsultasSoap12" type="tns:ConsultasSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultaEmpresas">
+      <soap12:operation soapAction="http://www.grupocandinho.com.br/WebServices/Consultas.asmx/ConsultaEmpresas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaUsuarioEmpresa">
+      <soap12:operation soapAction="http://www.grupocandinho.com.br/WebServices/Consultas.asmx/ConsultaUsuarioEmpresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaObrigacoes">
+      <soap12:operation soapAction="http://www.grupocandinho.com.br/WebServices/Consultas.asmx/ConsultaObrigacoes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEmpresaUsuarioObrigacao">
+      <soap12:operation soapAction="http://www.grupocandinho.com.br/WebServices/Consultas.asmx/ConsultaEmpresaUsuarioObrigacao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEscritorios">
+      <soap12:operation soapAction="http://www.grupocandinho.com.br/WebServices/Consultas.asmx/ConsultaEscritorios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaUsuarioEscritorio">
+      <soap12:operation soapAction="http://www.grupocandinho.com.br/WebServices/Consultas.asmx/ConsultaUsuarioEscritorio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConsultasHttpGet" type="tns:ConsultasHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ConsultaEmpresas">
+      <http:operation location="/ConsultaEmpresas" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaUsuarioEmpresa">
+      <http:operation location="/ConsultaUsuarioEmpresa" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaObrigacoes">
+      <http:operation location="/ConsultaObrigacoes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEmpresaUsuarioObrigacao">
+      <http:operation location="/ConsultaEmpresaUsuarioObrigacao" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEscritorios">
+      <http:operation location="/ConsultaEscritorios" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaUsuarioEscritorio">
+      <http:operation location="/ConsultaUsuarioEscritorio" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConsultasHttpPost" type="tns:ConsultasHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ConsultaEmpresas">
+      <http:operation location="/ConsultaEmpresas" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaUsuarioEmpresa">
+      <http:operation location="/ConsultaUsuarioEmpresa" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaObrigacoes">
+      <http:operation location="/ConsultaObrigacoes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEmpresaUsuarioObrigacao">
+      <http:operation location="/ConsultaEmpresaUsuarioObrigacao" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEscritorios">
+      <http:operation location="/ConsultaEscritorios" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaUsuarioEscritorio">
+      <http:operation location="/ConsultaUsuarioEscritorio" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Consultas">
+    <wsdl:port name="ConsultasSoap" binding="tns:ConsultasSoap">
+      <soap:address location="http://grupocandinho.com.br/WebServices/Consultas.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConsultasSoap12" binding="tns:ConsultasSoap12">
+      <soap12:address location="http://grupocandinho.com.br/WebServices/Consultas.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConsultasHttpGet" binding="tns:ConsultasHttpGet">
+      <http:address location="http://grupocandinho.com.br/WebServices/Consultas.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConsultasHttpPost" binding="tns:ConsultasHttpPost">
+      <http:address location="http://grupocandinho.com.br/WebServices/Consultas.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
